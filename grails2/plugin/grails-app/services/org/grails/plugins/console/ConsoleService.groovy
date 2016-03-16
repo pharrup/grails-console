@@ -17,7 +17,7 @@ class ConsoleService {
      * @return an Evaluation
      */
     Evaluation eval(String code, boolean autoImportDomains, request) {
-        log.trace "eval() code: $code"
+        log.trace "eval() by: ${request.getUserPrincipal() ?: 'Anonymous'} code: ${code}"
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream()
         PrintStream out = new PrintStream(baos)
